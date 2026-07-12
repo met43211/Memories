@@ -1,11 +1,11 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "Bun",
-    "extends": "./base.json",
-    "compilerOptions": {
-      "lib": ["ESNext"],
-      "types": ["bun-types"],
-      "jsx": "react-jsx",
-      "allowImportingTsExtensions": true
-    }
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Bun",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "types": ["bun-types"],
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true
   }
+}
