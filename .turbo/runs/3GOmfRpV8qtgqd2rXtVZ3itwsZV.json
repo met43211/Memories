@@ -30,9 +30,7 @@
     "endTime": 1783851092837,
     "exitCode": 0
   },
-  "packages": [
-    "api"
-  ],
+  "packages": ["api"],
   "envMode": "strict",
   "frameworkInference": true,
   "tasks": [],

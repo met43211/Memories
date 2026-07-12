@@ -7,5 +7,8 @@
     "ultracite/biome/vitest"
   ],
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "root": true
+  "root": true,
+  "files": {
+    "includes": ["!.claude", "!.cursor", "!.mcp", "!.agents"]
+  }
 }
