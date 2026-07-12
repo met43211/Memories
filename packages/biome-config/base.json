@@ -1,1 +1,28 @@
-{ "extends": ["ultracite/biome/core"] }
+{
+	"$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+	"extends": ["ultracite/biome/core"],
+	"files": {
+		"includes": [
+			"**",
+			"!**/node_modules",
+			"!**/dist",
+			"!**/build",
+			"!**/.turbo",
+			"!**/.claude",
+			"!**/.cursor",
+			"!**/.agents",
+			"!**/.vscode",
+			"!**/routeTree.gen.ts",
+			"!**/*.gen.ts",
+			"!**/bun.lock"
+		]
+	},
+	"linter": {
+		"rules": {
+			"performance": {
+				"noBarrelFile": "error",
+				"noReExportAll": "error"
+			}
+		}
+	}
+}

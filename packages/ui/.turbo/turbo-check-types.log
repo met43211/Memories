@@ -1,0 +1,2 @@
+$ tsc --noEmit
+src/ui/index.ts(1,15): error TS2307: Cannot find module './ui/button' or its corresponding type declarations.

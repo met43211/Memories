@@ -27,6 +27,12 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .cache
 *.tsbuildinfo
 
+# AI tooling
+.claude
+.cursor
+.mcp
+.agents
+
 # IntelliJ based IDEs
 .idea
 

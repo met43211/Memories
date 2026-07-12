@@ -1,54 +1,54 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(bun install)",
-      "Bash(bun add:*)",
-      "Bash(bunx turbo run:*)",
-      "Bash(bunx biome:*)",
-      "Bash(bun test:*)",
-      "Bash(git status)",
-      "Bash(git diff:*)",
-      "Edit(apps/**)",
-      "Edit(packages/**)"
-    ],
-    "deny": [
-      "Bash(npm:*)",
-      "Bash(pnpm:*)",
-      "Bash(yarn:*)",
-      "Bash(git push:*)",
-      "Bash(git commit:*)",
-      "Bash(rm -rf:*)",
-      "Bash(drizzle-kit push:*)",
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Edit(./bun.lock)"
-    ]
-  },
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bunx biome check --write --no-errors-on-unmatched .",
-            "timeout": 30,
-            "statusMessage": "Форматирую..."
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bunx turbo run check-types",
-            "timeout": 120,
-            "statusMessage": "Проверяю типы..."
-          }
-        ]
-      }
-    ]
-  }
+	"permissions": {
+		"allow": [
+			"Bash(bun install)",
+			"Bash(bun add:*)",
+			"Bash(bunx turbo run:*)",
+			"Bash(bunx biome:*)",
+			"Bash(bun test:*)",
+			"Bash(git status)",
+			"Bash(git diff:*)",
+			"Edit(apps/**)",
+			"Edit(packages/**)"
+		],
+		"deny": [
+			"Bash(npm:*)",
+			"Bash(pnpm:*)",
+			"Bash(yarn:*)",
+			"Bash(git push:*)",
+			"Bash(git commit:*)",
+			"Bash(rm -rf:*)",
+			"Bash(drizzle-kit push:*)",
+			"Read(./.env)",
+			"Read(./.env.*)",
+			"Edit(./bun.lock)"
+		]
+	},
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Write|Edit",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bunx biome check --write --no-errors-on-unmatched .",
+						"timeout": 30,
+						"statusMessage": "Форматирую..."
+					}
+				]
+			}
+		],
+		"Stop": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bunx turbo run check-types",
+						"timeout": 120,
+						"statusMessage": "Проверяю типы..."
+					}
+				]
+			}
+		]
+	}
 }
