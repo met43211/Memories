@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Vite / React SPA",
+    "extends": "./base.json",
+    "compilerOptions": {
+      "lib": ["ES2023", "DOM", "DOM.Iterable"],
+      "jsx": "react-jsx",
+      "useDefineForClassFields": true,
+      "allowImportingTsExtensions": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true
+    }
+  }

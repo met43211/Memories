@@ -1,0 +1,17 @@
+pre-commit:
+  jobs:
+    - run: bun x ultracite fix
+      glob:
+        - "**/*.js"
+        - "**/*.jsx"
+        - "**/*.ts"
+        - "**/*.tsx"
+        - "**/*.json"
+        - "**/*.jsonc"
+        - "**/*.css"
+      stage_fixed: true
+  commands:
+    check:
+      glob: "*.{js,ts,cjs,mjs,jsx,tsx,json}"
+      run: bunx biome check --write --no-errors-on-unmatched --staged {staged_files}
+      stage_fixed: true
