@@ -10,7 +10,7 @@ function Home() {
 		<div className="space-y-4 p-4">
 			<h1 className="font-semibold text-2xl">Мои компании</h1>
 			<Link to="/community/$id" params={{ id: "1" }}>
-				<Button>Weekend Crew</Button>
+				<Button color="success">Weekend Crew</Button>
 			</Link>
 		</div>
 	);

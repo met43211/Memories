@@ -5,5 +5,5 @@ export const Route = createFileRoute("/community/$id/")({
 });
 
 function RouteComponent() {
-	return <div>Hello "/community/$id/"!</div>;
+	return <div>Hello</div>;
 }
