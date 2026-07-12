@@ -3,6 +3,11 @@
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
+	"imports": {
+		"#ui/*": "./src/ui/*.tsx",
+		"#lib/*": "./src/lib/*.ts",
+		"#hooks/*": "./src/hooks/*.ts"
+	},
 	"exports": {
 		".": "./src/ui/index.ts",
 		"./globals.css": "./src/styles/globals.css",

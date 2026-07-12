@@ -1,11 +1,16 @@
-import { fileURLToPath, URL } from "node:url";
+import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
 	plugins: [
+		paraglideVitePlugin({
+			project: "./project.inlang",
+			outdir: "./src/paraglide",
+		}),
 		tanstackRouter({
 			target: "react",
 			autoCodeSplitting: true,
@@ -13,12 +18,8 @@ export default defineConfig({
 		}),
 		react(),
 		tailwindcss(),
+		tsconfigPaths(),
 	],
-	resolve: {
-		alias: {
-			"@": fileURLToPath(new URL("../../packages/ui/src", import.meta.url)),
-		},
-	},
 	server: { port: 3001, allowedHosts: true },
 	build: {
 		target: "es2022",
