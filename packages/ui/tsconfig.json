@@ -2,8 +2,7 @@
 	"extends": "@memories/tsconfig/react-library.json",
 	"compilerOptions": {
 		"paths": {
-			"#lib/*": ["./src/lib/*"],
-			"#hooks/*": ["./src/hooks/*"]
+			"@/*": ["./src/*"]
 		}
 	},
 	"include": ["src"]

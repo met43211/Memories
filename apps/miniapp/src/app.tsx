@@ -1,4 +1,6 @@
+import { Button } from "@memories/ui";
+
 function App() {
-	return <div>x</div>;
+	return <Button>shadcn button</Button>;
 }
 export default App;

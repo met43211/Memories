@@ -1,6 +1,6 @@
 # UI (@memories/ui)
 
-shadcn-компоненты в `src/ui/`. Импорт: `@memories/ui/button`.
+shadcn-компоненты в `src/ui/`. Импорт: `@memories/ui`.
 
 - Ставить только через `bunx shadcn@latest add <name>` **из этой папки**, не из приложения.
 - Токены — в `src/styles/globals.css`. Это единственное место, где живут цвета.
