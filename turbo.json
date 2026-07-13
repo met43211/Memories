@@ -17,6 +17,9 @@
 		"check-types": {
 			"dependsOn": ["^build"]
 		},
+		"dma": {
+			"outputs": []
+		},
 		"push": { "cache": false }
 	}
 }

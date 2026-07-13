@@ -15,6 +15,7 @@
 		"dev": "turbo dev",
 		"build": "turbo build",
 		"check-types": "turbo check-types",
+		"dma": "turbo run dma",
 		"lint": "biome check .",
 		"db:push": "turbo -F @mh/db push",
 		"check": "ultracite check",

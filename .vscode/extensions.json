@@ -1,5 +1,5 @@
 {
-	"recommendations": ["biomejs.biome"],
+	"recommendations": ["biomejs.biome", "inlang.vs-code-extension"],
 	"unwantedRecommendations": [
 		"esbenp.prettier-vscode",
 		"dbaeumer.vscode-eslint"

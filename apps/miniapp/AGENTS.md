@@ -37,3 +37,26 @@ import { treaty } from "@elysiajs/eden";
 Бандл критичен — WebView стартует на мобильном интернете.
 Не добавлять тяжёлые зависимости (moment, lodash целиком, иконочные паки).
 Не создавать barrel-файлы.
+
+<!-- dma:begin -->
+## Derived Modular Architecture (DMA)
+
+Rules come from the filesystem + import graph — not taste.
+
+- Composition root: `src/app/` (or `pages/` / `routes/`) — thin mounts of `*/public/*`
+- `features/` — leaf modules (no inbound edges from other modules)
+- `services/` — only after a module is imported by another module (`dma promote <name> --apply`)
+- `shared/` — portable helpers on second use
+- Cross-module imports: direct `*/public/*` paths — no barrel `index.ts`
+- `feature → feature` is forbidden; `import type` counts as an edge
+
+Verify: `npx @derived-modular/cli check .` (always in CI). Promote folder features: `npx @derived-modular/cli promote <name>` then `--apply`.
+
+Agent skill:
+
+```bash
+npx skills add mikhailmogilnikov/derived-modular-architecture --skill dma
+```
+
+<!-- dma:end -->
+

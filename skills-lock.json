@@ -6,6 +6,12 @@
 			"sourceType": "github",
 			"skillPath": "skills/brainstorming/SKILL.md",
 			"computedHash": "b73750a92bc4b5deeaafa0680fba706b9e89e091cdea40ee36a0420fc059fe4c"
+		},
+		"dma": {
+			"source": "mikhailmogilnikov/derived-modular-architecture",
+			"sourceType": "github",
+			"skillPath": "skills/dma/SKILL.md",
+			"computedHash": "99fc75daac14f74665b453940f4d5812a797bdeaa98b6a400d1914a66248952e"
 		}
 	}
 }
