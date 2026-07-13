@@ -22,7 +22,15 @@
 		},
 		{
 			"path": "../../node_modules/@derived-modular/biome-plugin/plugins/public-api.grit",
-			"includes": ["**/src/**"]
+			"includes": ["**/src/**", "!**/*.gen.ts", "!**/routeTree.gen.ts"]
+		}
+	],
+	"overrides": [
+		{
+			"includes": ["**/routeTree.gen.ts", "**/*.gen.ts"],
+			"linter": { "enabled": false },
+			"formatter": { "enabled": false },
+			"assist": { "enabled": false }
 		}
 	]
 }

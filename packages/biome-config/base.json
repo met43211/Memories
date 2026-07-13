@@ -4,17 +4,18 @@
 	"files": {
 		"includes": [
 			"**",
-			"!**/node_modules",
-			"!**/dist",
-			"!**/build",
-			"!**/.turbo",
-			"!**/.claude",
-			"!**/.cursor",
-			"!**/.agents",
-			"!**/.vscode",
-			"!**/routeTree.gen.ts",
-			"!**/*.gen.ts",
-			"!**/bun.lock"
+			"!!**/node_modules",
+			"!!**/dist",
+			"!!**/build",
+			"!!**/.turbo",
+			"!!**/.claude",
+			"!!**/.cursor",
+			"!!**/.agents",
+			"!!**/.vscode",
+			"!!**/routeTree.gen.ts",
+			"!!**/*.gen.ts",
+			"!!**/*.gen.*",
+			"!!**/bun.lock"
 		]
 	},
 	"linter": {
