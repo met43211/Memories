@@ -1,7 +1,16 @@
+import cors from "@elysiajs/cors";
 import { Elysia } from "elysia";
+import { config } from "./config";
+import { usersModule } from "./modules/users";
+import { errorHandler } from "./plugins/error";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+export const app = new Elysia()
+	.use(cors({ origin: config.corsOrigins }))
+	.use(errorHandler)
+	.get("/health", () => ({ ok: true }))
+	.use(usersModule)
+	.listen(config.port);
 
-console.log(
-	`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
-);
+export type App = typeof app;
+
+console.log(`API on http://localhost:${config.port}`);

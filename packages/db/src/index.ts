@@ -27,3 +27,4 @@ export {
 	sql,
 } from "drizzle-orm";
 export * from "./schema";
+export * from "./types";
