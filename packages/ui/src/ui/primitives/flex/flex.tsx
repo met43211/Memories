@@ -3,6 +3,7 @@ import { type FlexTvProps, flexTV } from "./classnames";
 
 export type FlexProps<T extends React.ElementType> = FlexTvProps &
 	React.HTMLAttributes<T> & {
+		vertical?: boolean;
 		as?: ElementType;
 		ref?: RefObject<T>;
 	};
@@ -15,7 +16,7 @@ export const Flex = <T extends ElementType = "div">(props: FlexProps<T>) => {
 		align,
 		width,
 		gap,
-		col,
+		vertical,
 		ref,
 		as,
 		...rest
@@ -23,7 +24,14 @@ export const Flex = <T extends ElementType = "div">(props: FlexProps<T>) => {
 
 	const Component = as || "div";
 
-	const classNames = flexTV({ justify, align, col, className, width, gap });
+	const classNames = flexTV({
+		justify,
+		align,
+		vertical,
+		className,
+		width,
+		gap,
+	});
 
 	return (
 		<Component ref={ref} className={classNames} {...rest}>

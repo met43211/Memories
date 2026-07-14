@@ -5,6 +5,9 @@ import { tv } from "#lib/utils/styling";
 export const flexTV = tv({
 	base: "flex",
 	variants: {
+		vertical: {
+			true: "flex-col",
+		},
 		justify: {
 			center: "justify-center",
 			start: "justify-start",
@@ -19,9 +22,6 @@ export const flexTV = tv({
 			end: "items-end",
 			stretch: "items-stretch",
 			baseline: "items-baseline",
-		},
-		col: {
-			true: "flex-col",
 		},
 		width: {
 			full: "w-full",
