@@ -1,0 +1,32 @@
+{
+	"name": "@memories/db",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./schema": "./src/schema.ts"
+	},
+	"scripts": {
+		"db:up": "docker compose up -d",
+		"db:down": "docker compose down",
+		"db:reset": "docker compose down -v && docker compose up -d",
+		"db:logs": "docker compose logs -f postgres",
+		"generate": "drizzle-kit generate",
+		"migrate": "drizzle-kit migrate",
+		"studio": "drizzle-kit studio",
+		"seed": "bun run src/seed.ts",
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"drizzle-orm": "^0.45.2",
+		"pg": "^8.22.0"
+	},
+	"devDependencies": {
+		"@memories/tsconfig": "workspace:*",
+		"@types/bun": "^1.3.14",
+		"@types/pg": "^8.11.0",
+		"drizzle-kit": "^0.31.0",
+		"typescript": "catalog:"
+	}
+}
