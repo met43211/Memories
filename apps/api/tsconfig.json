@@ -1,10 +1,14 @@
 {
 	"extends": "@memories/tsconfig/bun.json",
 	"compilerOptions": {
+		"noEmit": false,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"outDir": "dist",
+		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
-		},
-		"strictNullChecks": true
+		}
 	},
-	"include": ["src/**/*.ts"]
+	"include": ["src"]
 }

@@ -6,7 +6,7 @@ import { AppProviders } from "./providers";
 import { router } from "./router";
 
 export async function bootstrap() {
-	await loadCatalog("ru");
+	await loadCatalog("en");
 
 	const rootEl = document.getElementById("root");
 	if (!rootEl) throw new Error("#root not found");

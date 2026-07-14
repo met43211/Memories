@@ -1,11 +1,16 @@
 {
-	"name": "api",
+	"name": "@memories/api",
 	"version": "1.0.50",
+	"exports": {
+		"./types": "./dist/index.d.ts"
+	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "NODE_ENV=development bun --watch --env-file=../../.env src/index.ts",
-		"start": "NODE_ENV=production bun --env-file=../../.env src/index.ts",
-		"check-types": "tsc --noEmit"
+		"dev": "bun --watch --env-file=../../.env src/index.ts",
+		"dev:types": "tsc --watch --preserveWatchOutput",
+		"build:types": "tsc",
+		"check-types": "tsc",
+		"start": "bun --env-file=../../.env src/index.ts",
+		"test": "bun test"
 	},
 	"dependencies": {
 		"@elysiajs/cors": "^1.4.2",

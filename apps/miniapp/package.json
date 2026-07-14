@@ -1,21 +1,23 @@
 {
-	"name": "miniapp",
+	"name": "@memories/miniapp",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc -b && vite build",
+		"build": "tsc --noEmit && vite build",
 		"preview": "vite preview",
-		"check-types": "tsc -b",
+		"check-types": "tsc --noEmit",
 		"machine-translate": "inlang machine translate --project project.inlang",
 		"extract": "lingui extract",
 		"compile": "lingui compile",
 		"dma": "dma check ."
 	},
 	"dependencies": {
+		"@elysiajs/eden": "^1.4.9",
 		"@lingui/core": "^6.5.0",
 		"@lingui/react": "^6.5.0",
+		"@memories/api": "workspace:*",
 		"@tanstack/react-query": "^5.101.2",
 		"@tanstack/react-router": "^1.170.17",
 		"@vitejs/plugin-react": "^6.0.3",

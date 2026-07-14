@@ -14,9 +14,6 @@
 			"persistent": true,
 			"dependsOn": ["^build"]
 		},
-		"check-types": {
-			"dependsOn": ["^build"]
-		},
 		"dma": {
 			"outputs": []
 		},
@@ -24,6 +21,12 @@
 		"db:up": { "cache": false },
 		"db:reset": { "cache": false },
 		"migrate": { "cache": false },
-		"seed": { "cache": false, "dependsOn": ["migrate"] }
+		"seed": { "cache": false, "dependsOn": ["migrate"] },
+		"build:types": {
+			"outputs": ["dist/**"]
+		},
+		"check-types": {
+			"dependsOn": ["^build", "@memories/api#build:types"]
+		}
 	}
 }
