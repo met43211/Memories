@@ -1,5 +1,5 @@
 {
-	"id": "2776e642-a1cb-46a1-8140-e1d188aa3819",
+	"id": "39730360-1f66-4af1-9064-4e088cce4edd",
 	"prevId": "00000000-0000-0000-0000-000000000000",
 	"version": "7",
 	"dialect": "postgresql",
@@ -19,7 +19,7 @@
 					"name": "tg_chat_id",
 					"type": "bigint",
 					"primaryKey": false,
-					"notNull": true
+					"notNull": false
 				},
 				"name": {
 					"name": "name",
@@ -398,8 +398,8 @@
 				}
 			},
 			"indexes": {
-				"photos_community_event_idx": {
-					"name": "photos_community_event_idx",
+				"memories_community_event_idx": {
+					"name": "memories_community_event_idx",
 					"columns": [
 						{
 							"expression": "community_id",
@@ -425,8 +425,8 @@
 					"method": "btree",
 					"with": {}
 				},
-				"photos_dedup_idx": {
-					"name": "photos_dedup_idx",
+				"memories_dedup_idx": {
+					"name": "memories_dedup_idx",
 					"columns": [
 						{
 							"expression": "community_id",
@@ -505,14 +505,14 @@
 					"primaryKey": false,
 					"notNull": false
 				},
-				"firstname": {
-					"name": "firstname",
+				"first_name": {
+					"name": "first_name",
 					"type": "text",
 					"primaryKey": false,
 					"notNull": true
 				},
-				"lastname": {
-					"name": "lastname",
+				"last_name": {
+					"name": "last_name",
 					"type": "text",
 					"primaryKey": false,
 					"notNull": false

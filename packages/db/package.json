@@ -12,10 +12,10 @@
 		"db:down": "docker compose down",
 		"db:reset": "docker compose down -v && docker compose up -d",
 		"db:logs": "docker compose logs -f postgres",
-		"generate": "drizzle-kit generate",
-		"migrate": "drizzle-kit migrate",
-		"studio": "drizzle-kit studio",
-		"seed": "bun run src/seed.ts",
+		"generate": "bun --env-file=../../.env drizzle-kit generate",
+		"migrate": "bun --env-file=../../.env drizzle-kit migrate",
+		"studio": "bun --env-file=../../.env drizzle-kit studio",
+		"seed": "bun --env-file=../../.env src/seed.ts",
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {

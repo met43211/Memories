@@ -1,7 +1,7 @@
 CREATE TYPE "public"."member_role" AS ENUM('owner', 'admin', 'member');--> statement-breakpoint
 CREATE TABLE "communities" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
-	"tg_chat_id" bigint NOT NULL,
+	"tg_chat_id" bigint,
 	"name" text NOT NULL,
 	"owner_id" uuid,
 	"avatar_key" text,
@@ -54,8 +54,8 @@ CREATE TABLE "users" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"tg_id" bigint NOT NULL,
 	"username" text,
-	"firstname" text NOT NULL,
-	"lastname" text,
+	"first_name" text NOT NULL,
+	"last_name" text,
 	"avatar_url" text,
 	"locale" text,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
@@ -73,6 +73,6 @@ ALTER TABLE "memories" ADD CONSTRAINT "memories_uploaded_by_users_id_fk" FOREIGN
 CREATE UNIQUE INDEX "communities_tg_chat_id_idx" ON "communities" USING btree ("tg_chat_id");--> statement-breakpoint
 CREATE INDEX "members_user_id_idx" ON "community_members" USING btree ("user_id");--> statement-breakpoint
 CREATE INDEX "events_community_idx" ON "events" USING btree ("community_id","happened_at");--> statement-breakpoint
-CREATE INDEX "photos_community_event_idx" ON "memories" USING btree ("community_id","event_id","created_at");--> statement-breakpoint
-CREATE UNIQUE INDEX "photos_dedup_idx" ON "memories" USING btree ("community_id","content_hash");--> statement-breakpoint
+CREATE INDEX "memories_community_event_idx" ON "memories" USING btree ("community_id","event_id","created_at");--> statement-breakpoint
+CREATE UNIQUE INDEX "memories_dedup_idx" ON "memories" USING btree ("community_id","content_hash");--> statement-breakpoint
 CREATE UNIQUE INDEX "users_tg_id_idx" ON "users" USING btree ("tg_id");
